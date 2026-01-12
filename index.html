@@ -95,20 +95,31 @@ function openChat() {
 
 function answer() {
     let q = document.getElementById("userInput").value.toLowerCase();
-    let r = "Bu soru çok ilginç 🤖";
+    let r = "";
 
-    if (q.includes("yapay zeka"))
-        r = "Yapay zeka, makinelerin insan gibi düşünmesini sağlar.";
-    else if (q.includes("sen kimsin"))
-        r = "Ben ZekaLab yapay zekasıyım 😎";
-    else if (q.includes("ödev"))
-        r = "Ödevlerde yardımcı olabilirim.";
-    else if (q.includes("merhaba"))
-        r = "Merhaba! Sana nasıl yardımcı olabilirim?";
+    if (q.includes("merhaba") || q.includes("selam")) {
+        r = "Merhaba 👋 Ben ZekaLab, gelişmiş bir yapay zekâyım. Sana ders, ödev, teknoloji veya genel bilgiler konusunda yardımcı olabilirim.";
+    } 
+    else if (q.includes("sen kimsin")) {
+        r = "Ben ZekaLab yapay zekâsıyım 🤖. Analiz yapabilir, açıklayabilir ve öğrenmene yardımcı olacak şekilde cevaplar veririm.";
+    }
+    else if (q.includes("yapay zeka")) {
+        r = "Yapay zekâ, makinelerin öğrenme, analiz etme ve karar verme yetenekleri kazanmasını sağlayan bir teknolojidir. Günümüzde sağlık, eğitim, oyun ve savunma sanayinde aktif olarak kullanılır.";
+    }
+    else if (q.includes("matematik")) {
+        r = "Matematik, problem çözme ve mantık kurma bilimidir. İstersen işlem çözebilirim, konu anlatabilirim veya örnek soru hazırlayabilirim.";
+    }
+    else if (q.includes("fen")) {
+        r = "Fen bilimleri; fizik, kimya ve biyolojiyi kapsar. Deney mantığıyla düşünür ve neden–sonuç ilişkisi kurar.";
+    }
+    else if (q.includes("ödev")) {
+        r = "Ödevlerde sana doğrudan cevaptan ziyade, **nasıl yapılacağını öğreterek** yardımcı olurum. Konuyu söylemen yeterli 📚";
+    }
+    else {
+        r = "Bu konu hakkında düşüneyim 🤔\n\nSorun analiz edildi. Daha net bir cevap verebilmem için biraz daha detay verir misin?";
+    }
 
     document.getElementById("response").innerText = r;
 }
-</script>
-
-</body>
+</script></body>
 </html>
