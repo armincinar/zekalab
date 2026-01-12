@@ -123,3 +123,68 @@ function answer() {
 }
 </script></body>
 </html>
+<script>
+function openChat() {
+    document.getElementById("chat").style.display = "block";
+}
+
+function random(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function answer() {
+    let q = document.getElementById("userInput").value.toLowerCase();
+    let responseBox = document.getElementById("response");
+
+    responseBox.innerText = "🤖 Düşünüyorum...";
+
+    setTimeout(() => {
+        let r = "";
+
+        if (q.includes("merhaba") || q.includes("selam")) {
+            r = random([
+                "Merhaba 👋 Ben ZekaLab. Sana nasıl yardımcı olabilirim?",
+                "Selam! 🤖 Bugün ne öğrenmek istiyorsun?",
+                "Merhaba! Sorunu yazabilirsin."
+            ]);
+        }
+        else if (q.includes("sen kimsin")) {
+            r = random([
+                "Ben ZekaLab yapay zekâsıyım. Analiz yapar, açıklar ve öğretirim.",
+                "ZekaLab, bilgiye hızlı ve anlaşılır erişmen için geliştirilmiş bir AI’dır.",
+                "Ben gelişmiş bir yapay zekâyım 🤖 Öğrenmene yardımcı olurum."
+            ]);
+        }
+        else if (q.includes("yapay zeka")) {
+            r = random([
+                "Yapay zekâ, makinelerin öğrenme ve karar verme yeteneği kazanmasını sağlar.",
+                "AI sistemleri verilerden öğrenir ve insan benzeri sonuçlar üretir.",
+                "Yapay zekâ günümüzde eğitimden sağlığa kadar birçok alanda kullanılır."
+            ]);
+        }
+        else if (q.includes("matematik")) {
+            r = random([
+                "Matematik mantık işidir. İstersen konu anlatayım veya soru çözelim.",
+                "Matematik problemlerini adım adım çözebilirim.",
+                "Hangi matematik konusunu istiyorsun?"
+            ]);
+        }
+        else if (q.includes("ödev")) {
+            r = random([
+                "Ödevlerde sana yol gösteririm, direkt cevaptan çok öğretmeyi tercih ederim.",
+                "Ödev konunu söylersen birlikte çözeriz 📘",
+                "Ödevler için buradayım, konuyu yazman yeterli."
+            ]);
+        }
+        else {
+            r = random([
+                "Bu ilginç bir soru 🤔 Biraz daha detay verebilir misin?",
+                "Sorunu analiz ediyorum… Daha açık yazarsan daha iyi cevaplayabilirim.",
+                "Bu konuda yardımcı olabilmem için biraz daha bilgiye ihtiyacım var."
+            ]);
+        }
+
+        responseBox.innerText = r;
+    }, 900);
+}
+</script>
